@@ -1,0 +1,12 @@
+class Solution:
+    def buildArray(self, target: List[int], n: int) -> List[str]:
+        operations=[]
+        j=1
+        for i in target:
+            while j<=n and  j!=i:
+                operations.extend(["Push","Pop"])
+                j+=1
+            if j<=n and j==i:
+                operations.append("Push")
+                j+=1
+        return operations
